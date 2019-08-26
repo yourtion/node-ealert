@@ -1,0 +1,40 @@
+{
+  "name": "ealert",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": "",
+  "author": "YourtionGuo <yourtion@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typing": "dist/index.d.ts",
+  "files": [
+    "dist/*.d.ts",
+    "dist/*.js"
+  ],
+  "peerDependencies": {
+    "@types/node": "*"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\"",
+    "compile": "rm -rf dist && tsc",
+    "prepublishOnly": "npm run format && npm run compile",
+    "postpublish": "git tag v`node -p 'require(\"./package\").version'`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourtion/node-ealert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourtion/node-ealert/issues"
+  },
+  "homepage": "https://github.com/yourtion/node-ealert#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  }
+}
